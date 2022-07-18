@@ -1,5 +1,5 @@
 enum 50200 "Entry Type"
 {
-    value(0;Buying){}
-    value(1;Selling){}
+    value(0; Purchase) { }
+    value(1; Sale) { }
 }
