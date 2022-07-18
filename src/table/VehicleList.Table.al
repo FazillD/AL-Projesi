@@ -1,34 +1,35 @@
 table 50150 "Vehicle List"
 {
-
-    Caption = 'Vehicle List';
+    LookupPageId = "Vehicle List Card";
+    DrillDownPageId = "Vehicle List Card";
+    Description = 'Vehicle List1';
     DataClassification = CustomerContent;
 
     fields
     {
         field(1; No; Text[20])
         {
-            Caption = 'No';
+            Description = 'No';
             DataClassification = CustomerContent;
 
         }
         field(2; Acıklama; Text[20])
         {
-            Caption = 'Acıklama';
+            Description = 'Acıklama';
             DataClassification = CustomerContent;
 
 
         }
         field(3; Acıklama2; Text[20])
         {
-            Caption = 'Acıklama';
+            Description = 'Acıklama';
             DataClassification = CustomerContent;
 
 
         }
         field(4; AramaAcıklama; Text[20])
         {
-            Caption = 'AramaAcıklama';
+            Description = 'AramaAcıklama';
             DataClassification = CustomerContent;
 
         }
@@ -40,16 +41,35 @@ table 50150 "Vehicle List"
         }
         field(6; Stok; Decimal)
         {
+            FieldClass = FlowField;
+            CalcFormula = SUM("Arac Deftere Girisleri".Miktar
+            WHERE("AracNo" = FIELD("No")));
             Editable = false;
-            Caption = 'Stok';
-            DataClassification = CustomerContent;
+            Description = 'Stok';
+            //DataClassification = CustomerContent;
 
         }
         field(7; NetDegisim; Decimal)
         {
+            FieldClass = FlowField;
             Editable = false;
-            Caption = 'NetDegisim';
-            DataClassification = CustomerContent;
+            Description = 'NetDegisim';
+            CalcFormula = sum("Arac Deftere Girisleri".Miktar
+            where(AracNo = field(No),
+            "Deftere Nakil Tarihi" = filter(< '14/7/2022')));
+            //DataClassification = CustomerContent;
+
+        }
+        field(8; PurchaseAmount; Decimal)
+        {
+
+            FieldClass = FlowField;
+            Editable = false;
+            Description = 'Purchase Amount';
+            CalcFormula = sum("Arac Deftere Girisleri".Miktar
+            where(AracNo = field(No),
+            "Giris Turu" = const(Buying)));
+            //DataClassification = CustomerContent;
 
         }
     }
@@ -62,8 +82,6 @@ table 50150 "Vehicle List"
         }
         key(key1; AracGrupKodu)
         { }
-        key(key2; Stok)
-        { }
     }
 
     var
@@ -75,8 +93,15 @@ table 50150 "Vehicle List"
     end;
 
     trigger OnModify()
+    var
+        amount: Record "Arac Deftere Girisleri";
+        purchase: Integer;
     begin
-
+        if amount.Miktar > 0 then begin
+            Message('hi there');
+            purchase := PurchaseAmount + amount.Miktar
+        end;
+        PurchaseAmount := purchase;
     end;
 
     trigger OnDelete()
@@ -88,5 +113,7 @@ table 50150 "Vehicle List"
     begin
 
     end;
+
+    var
 
 }

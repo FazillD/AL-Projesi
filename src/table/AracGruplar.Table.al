@@ -1,18 +1,18 @@
 table 50152 "Arac Grupları"
 {
-
+    Description = 'Arac Gruplar1';
     DataClassification = CustomerContent;
     fields
     {
         field(1; Kod; Text[10])
         {
-            Caption = 'Kod';
+            Description = 'Kod';
             DataClassification = ToBeClassified;
 
         }
         field(2; Acıklama; Text[30])
         {
-            Caption = 'Acıklama';
+            Description = 'Acıklama';
             DataClassification = ToBeClassified;
 
         }

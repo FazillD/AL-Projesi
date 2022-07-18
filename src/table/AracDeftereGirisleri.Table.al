@@ -1,97 +1,108 @@
 table 50155 "Arac Deftere Girisleri"
 {
-    Caption = 'Arac Deftere Girisleri';
+    LookupPageId = "Arac Deftere Giris Liste";
+    DrillDownPageId = "Arac Deftere Giris Liste";
+    Description = 'Arac Deftere Girisleri1';
     DataClassification = ToBeClassified;
-
     fields
     {
         field(1; AracNo; Text[10])
         {
-            Caption = 'AracNo';
-            TableRelation = "Vehicle List".No;
+            Description = 'AracNo';
+            TableRelation = "Vehicle List";
             DataClassification = ToBeClassified;
 
         }
         field(2; "Deftere Nakil Tarihi"; Date)
         {
-            Caption = 'Deftere Nakil Tarihi';
+            Description = 'Deftere Nakil Tarihi';
             DataClassification = ToBeClassified;
 
         }
         field(3; "Belge Tarihi"; Date)
         {
-            Caption = 'Belge Tarihi';
+            Description = 'Belge Tarihi';
             DataClassification = ToBeClassified;
 
         }
-        field(4; "Giris Turu"; Text[20])
+        field(4; "Giris Turu"; Enum "Entry Type")
         {
-            Caption = 'Giris Turu';
+            Description = 'Giris Turu';
             DataClassification = ToBeClassified;
 
         }
         field(5; "Belge No."; Integer)
         {
-            Caption = 'Belge No.';
+            Description = 'Belge No.';
             DataClassification = ToBeClassified;
 
         }
         field(6; "Harici Belge No."; Integer)
         {
-            Caption = 'Harici Belge No.';
+            Description = 'Harici Belge No.';
             DataClassification = ToBeClassified;
 
         }
         field(7; "Kaynak Turu"; Text[10])
         {
-            Caption = 'Kaynak Turu';
+            Description = 'Kaynak Turu';
             DataClassification = ToBeClassified;
 
         }
         field(8; "Kaynak No."; Integer)
         {
-            Caption = 'Kaynak No.';
+            Description = 'Kaynak No.';
             DataClassification = ToBeClassified;
 
         }
         field(9; Acıklama; Text[10])
         {
-            Caption = 'Acıklama';
+            Description = 'Acıklama';
             DataClassification = ToBeClassified;
         }
-        field(10; Miktar; Integer)
+        field(10; Miktar; Decimal)
         {
-            Caption = 'Miktar';
+            Description = 'Miktar';
             DataClassification = ToBeClassified;
+            trigger OnValidate()
+            begin
+                if Miktar > 0 then begin
+                    Pozitif := true;
+                end
+                else
+                    Pozitif := false;
+            end;
 
         }
         field(11; Pozitif; Boolean)
         {
-            Caption = 'Pozitif';
+            Editable = false;
+            Description = 'Pozitif';
             DataClassification = ToBeClassified;
 
         }
         field(12; "Numara Serisi"; Integer)
         {
-            Caption = 'Numara Serisi';
+            Description = 'Numara Serisi';
             DataClassification = ToBeClassified;
 
         }
         field(13; "Belge Satır No."; Integer)
         {
-            Caption = 'Belge Satır No.';
+            Description = 'Belge Satır No.';
             DataClassification = ToBeClassified;
 
         }
         field(14; "Arac Acıklaması"; Text[20])
         {
-            Caption ='Arac Acıklaması';
+            Description = 'Arac Acıklaması';
             DataClassification = ToBeClassified;
 
         }
         field(15; "Giris No."; Integer)
         {
-            Caption = 'Giris No.';
+            NotBlank = true;
+            Description = 'Giris No.';
             DataClassification = ToBeClassified;
 
         }
@@ -99,7 +110,7 @@ table 50155 "Arac Deftere Girisleri"
 
     keys
     {
-        key(PK; AracNo)
+        key(PK; "Giris No.")
         {
             Clustered = true;
         }
@@ -127,5 +138,8 @@ table 50155 "Arac Deftere Girisleri"
     begin
 
     end;
+
+
+
 
 }
