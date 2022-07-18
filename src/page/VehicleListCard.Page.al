@@ -1,12 +1,12 @@
 page 50151 "Vehicle List Card"
 {
-    Editable = true;
+    Editable = false;
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "Vehicle List";
     CardPageId = "Vehicle Card";
-    Caption = 'Vehicle List';
+    Description = 'Vehicle List';
 
     layout
     {
@@ -46,6 +46,11 @@ page 50151 "Vehicle List Card"
                 }
                 field("NetDegisim"; "NetDegisim")
                 {
+                    ApplicationArea = All;
+                }
+                field(PurchaseAmount; PurchaseAmount)
+                {
+                    Visible = false;
                     ApplicationArea = All;
                 }
 

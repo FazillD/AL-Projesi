@@ -1,6 +1,6 @@
 page 50155 "Arac Deftere Giris Page"
 {
-    Caption = 'Arac Deftere Giris Page';
+    Description = 'Arac Deftere Giris Page';
     PageType = Card;
     UsageCategory = None;
     SourceTable = "Arac Deftere Girisleri";
@@ -94,4 +94,9 @@ page 50155 "Arac Deftere Giris Page"
 
     var
         myInt: Integer;
+
+    /*trigger OnQueryClosePage(CloseAction: Action): Boolean
+    begin
+        Rec.TestField("Giris No.");
+    end;*/
 }

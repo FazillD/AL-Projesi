@@ -1,7 +1,7 @@
 page 50152 "Vehicle Type"
 {
-    Editable = true;
-    Caption = 'Vehicle Type';
+    Editable = false;
+    Description = 'Vehicle Type';
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
@@ -17,16 +17,16 @@ page 50152 "Vehicle Type"
                 field(Kod; "Kod")
                 {
                     ApplicationArea = All;
-                    
+
                 }
-                field("Acıklama";"Acıklama")
+                field("Acıklama"; "Acıklama")
                 {
                     ApplicationArea = All;
                 }
             }
         }
     }
-    
+
     actions
     {
         area(Processing)
@@ -34,15 +34,15 @@ page 50152 "Vehicle Type"
             action(ActionName)
             {
                 ApplicationArea = All;
-                
+
                 trigger OnAction()
                 begin
-                    
+
                 end;
             }
         }
     }
-    
+
     var
         myInt: Integer;
 }

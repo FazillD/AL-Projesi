@@ -1,10 +1,9 @@
 page 50150 "Vehicle Card"
 {
-    Caption = 'Vehicle Card';
+    Description = 'Vehicle Card';
     PageType = Card;
     UsageCategory = None;
     SourceTable = "Vehicle List";
-
     layout
     {
         area(Content)
@@ -21,7 +20,7 @@ page 50150 "Vehicle Card"
                 }
                 field("Acıklama2"; "Acıklama2")
                 {
-                    Caption = 'Acıklama 2';
+                    Description = 'Acıklama 2';
                     ApplicationArea = All;
                 }
                 field("AramaAcıklama"; "AramaAcıklama")
@@ -37,6 +36,10 @@ page 50150 "Vehicle Card"
                     ApplicationArea = All;
                 }
                 field(NetDegisim; NetDegisim)
+                {
+                    ApplicationArea = All;
+                }
+                field(PurchaseAmount; PurchaseAmount)
                 {
                     ApplicationArea = All;
                 }

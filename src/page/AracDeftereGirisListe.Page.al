@@ -1,11 +1,12 @@
 page 50156 "Arac Deftere Giris Liste"
 {
+    Editable = false;
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "Arac Deftere Girisleri";
     CardPageId = "Arac Deftere Giris Page";
-    Caption = 'Arac Deftere Girisleri';
+    Description = 'Arac Deftere Girisleri';
 
     layout
     {
@@ -48,11 +49,13 @@ page 50156 "Arac Deftere Giris Liste"
                 field("Arac Acıklaması"; "Arac Acıklaması")
                 { ApplicationArea = All; }
                 field("Giris No."; "Giris No.")
-                { ApplicationArea = All; }
+                {
+                    ApplicationArea = All;
+                    ShowMandatory = true;
+                }
             }
         }
     }
-
 
     actions
     {
