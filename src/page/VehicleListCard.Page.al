@@ -7,49 +7,49 @@ page 50151 "Vehicle List Card"
     SourceTable = "Vehicle List";
     CardPageId = "Vehicle Card";
     Description = 'Vehicle List';
-
     layout
     {
         area(Content)
         {
             repeater(Group)
             {
-                field("No"; "No")
+                field("No."; "No.")
                 {
+                    ToolTip = 'Specifies the number of the item.';
                     ApplicationArea = All;
-
                 }
-                field("Acıklama"; "Acıklama")
+                field(Description; Description)
                 {
+                    ToolTip = 'Specifies a description of the item.';
                     ApplicationArea = All;
-
                 }
-                field("Acıklama2"; "Acıklama2")
+                field(Description2; Description2)
                 {
-                    Visible = false;
+                    ToolTip = 'Specifies a description of the item.';
                     ApplicationArea = All;
-
                 }
-                field("AramaAcıklama"; "AramaAcıklama")
-                {
-                    ApplicationArea = All;
-
-                }
-                field("AracGrupKodu"; "AracGrupKodu")
-                {
-                    ApplicationArea = All;
-
-                }
-                field("Stok"; "Stok")
+                field("Search Description"; "Search Description")
                 {
                     ApplicationArea = All;
                 }
-                field("NetDegisim"; "NetDegisim")
+                field("Vehicle Group Code"; "Vehicle Group Code")
                 {
+                    ToolTip = 'Specifies a type of the vehicle.';
                     ApplicationArea = All;
                 }
-                field(PurchaseAmount; PurchaseAmount)
+                field(Inventory; Inventory)
                 {
+                    ToolTip = 'Specifies how many units, such as pieces, boxes, or cans, of the item are in inventory.';
+                    ApplicationArea = All;
+                }
+                field("Net Change"; "Net Change")
+                {
+                    ToolTip = 'Specifies the net change in the account balance during the time period in the Date Filter field.';
+                    ApplicationArea = All;
+                }
+                field("Purchase Amount"; "Purchase Amount")
+                {
+                    ToolTip = 'Specifies the all purchase int the account.';
                     Visible = false;
                     ApplicationArea = All;
                 }

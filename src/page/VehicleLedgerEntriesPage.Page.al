@@ -1,9 +1,9 @@
-page 50155 "Arac Deftere Giris Page"
+page 50155 "Vehicle Ledger Entries Page"
 {
-    Description = 'Arac Deftere Giris Page';
+    Description = 'Vehicle Ledger Entries Page';
     PageType = Card;
     UsageCategory = None;
-    SourceTable = "Arac Deftere Girisleri";
+    SourceTable = "Vehicle Ledger Entries";
 
     layout
     {
@@ -11,65 +11,70 @@ page 50155 "Arac Deftere Giris Page"
         {
             group(GroupName)
             {
-                field(AracNo; AracNo)
+                field("Vehicle No"; "Vehicle No")
                 {
                     ApplicationArea = All;
                 }
-                field("Deftere Nakil Tarihi"; "Deftere Nakil Tarihi")
+                field("Posting Date"; "Posting Date")
+                {
+                    ToolTip = 'Specifies the posting date for the entry.';
+                    ApplicationArea = All;
+                }
+                field("Document Date"; "Document Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Belge Tarihi"; "Belge Tarihi")
+                field("Entry Type"; "Entry Type")
+                {
+                    ToolTip = 'Specifies which type of transaction that the entry is created from.';
+                    ApplicationArea = All;
+                }
+                field("Document No."; "Document No.")
+                {
+                    ToolTip = 'Specifies the document number on the entry. The document is the voucher that the entry was based on, for example, a receipt.';
+                    ApplicationArea = All;
+                }
+                field("External Document No."; "External Document No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Giris Turu"; "Giris Turu")
+                field("Source Type"; "Source Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Belge No."; "Belge No.")
+                field("Source No."; "Source No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Harici Belge No."; "Harici Belge No.")
+                field(Decription; Decription)
                 {
                     ApplicationArea = All;
                 }
-                field("Kaynak Turu"; "Kaynak Turu")
+                field("Sales Amount"; "Amount")
                 {
                     ApplicationArea = All;
                 }
-                field("Kaynak No."; "Kaynak No.")
+                field(Positive; Positive)
                 {
                     ApplicationArea = All;
                 }
-                field("Acıklama"; "Acıklama")
+                field("No. Series"; "No. Series")
                 {
                     ApplicationArea = All;
                 }
-                field(Miktar; Miktar)
+
+                field("Document Line No."; "Document Line No.")
                 {
                     ApplicationArea = All;
                 }
-                field(Pozitif; Pozitif)
+                field("Vehicle Description"; "Vehicle Description")
                 {
                     ApplicationArea = All;
                 }
-                field("Numara Serisi"; "Numara Serisi")
+                field("Entry No."; "Entry No.")
                 {
                     ApplicationArea = All;
-                }
-                field("Belge Satır No."; "Belge Satır No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Arac Acıklaması"; "Arac Acıklaması")
-                {
-                    ApplicationArea = All;
-                }
-                field("Giris No."; "Giris No.")
-                {
-                    ApplicationArea = All;
+                    ToolTip = 'Specifies the number of the entry, as assigned from the specified number series when the entry was created.';
                 }
             }
 

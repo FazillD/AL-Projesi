@@ -10,37 +10,42 @@ page 50150 "Vehicle Card"
         {
             group(General)
             {
-                field(No; No)
+                field("No."; "No.")
+                {
+                    ToolTip = 'Specifies the number of the involved entry or record, according to the specified number series.';
+                    ApplicationArea = All;
+                }
+                field(Description; Description)
+                {
+                    ToolTip = 'Specifies a description of the item.';
+                    ApplicationArea = All;
+                }
+                field(Description2; Description2)
+                {
+                    ToolTip = 'Specifies a description of the item.';
+                    ApplicationArea = All;
+                }
+                field("Search Description"; "Search Description")
                 {
                     ApplicationArea = All;
                 }
-                field("Acıklama"; "Acıklama")
+                field("Vehicle Group Code"; "Vehicle Group Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Acıklama2"; "Acıklama2")
+                field(Inventory; Inventory)
                 {
-                    Description = 'Acıklama 2';
+                    ToolTip = 'Specifies how many units, such as pieces, boxes, or cans, of the item are in inventory.';
                     ApplicationArea = All;
                 }
-                field("AramaAcıklama"; "AramaAcıklama")
+                field("Net Change"; "Net Change")
                 {
+                    ToolTip = 'Specifies the net change in the account balance during the time period in the Date Filter field.';
                     ApplicationArea = All;
                 }
-                field(AracGrupKodu; AracGrupKodu)
+                field("Purchase Amount"; "Purchase Amount")
                 {
-                    ApplicationArea = All;
-                }
-                field(Stok; Stok)
-                {
-                    ApplicationArea = All;
-                }
-                field(NetDegisim; NetDegisim)
-                {
-                    ApplicationArea = All;
-                }
-                field(PurchaseAmount; PurchaseAmount)
-                {
+                    ToolTip = 'Specifies the all purchase int the account.';
                     ApplicationArea = All;
                 }
             }
@@ -55,13 +60,12 @@ page 50150 "Vehicle Card"
                 ApplicationArea = All;
 
                 trigger OnAction()
+                var
+
                 begin
 
                 end;
             }
         }
     }
-
-    var
-        myInt: Integer;
 }

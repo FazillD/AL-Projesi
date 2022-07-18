@@ -1,11 +1,11 @@
 page 50152 "Vehicle Type"
 {
-    Editable = false;
+    Editable = true;
     Description = 'Vehicle Type';
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = "Arac Grupları";
+    SourceTable = "Vehicle Type";
     CardPageId = "Vehicle Type";
 
     layout
@@ -14,12 +14,12 @@ page 50152 "Vehicle Type"
         {
             repeater(GroupName)
             {
-                field(Kod; "Kod")
+                field("Code"; "Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Acıklama"; "Acıklama")
+                field("Description"; "Description")
                 {
                     ApplicationArea = All;
                 }

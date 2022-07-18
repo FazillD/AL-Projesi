@@ -30,12 +30,12 @@ page 50158 "Main Menu"
                     ApplicationArea = All;
                     RunObject = page "Vehicle List Card";
                 }
-                action("Arac Defter Girisi")
+                action("Vehicle Ledger Entries List")
                 {
                     ApplicationArea = All;
-                    RunObject = page "Arac Deftere Giris Liste";
+                    RunObject = page "Vehicle Ledger Entries List";
                 }
-                action("Arac Grupları")
+                action("Vehicle Type")
                 {
                     ApplicationArea = All;
                     RunObject = page "Vehicle Type";
