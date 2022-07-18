@@ -11,70 +11,79 @@ page 50155 "Vehicle Ledger Entries Page"
         {
             group(GroupName)
             {
-                field("Vehicle No"; "Vehicle No")
+                field("Vehicle No"; Rec."Vehicle No")
                 {
                     ApplicationArea = All;
                 }
-                field("Posting Date"; "Posting Date")
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ToolTip = 'Specifies the posting date for the entry.';
                     ApplicationArea = All;
                 }
-                field("Document Date"; "Document Date")
+                field("Document Date"; Rec."Document Date")
                 {
+                    ToolTip = 'Specifies the date of document.';
                     ApplicationArea = All;
                 }
-                field("Entry Type"; "Entry Type")
+                field("Entry Type"; Rec."Entry Type")
                 {
                     ToolTip = 'Specifies which type of transaction that the entry is created from.';
                     ApplicationArea = All;
                 }
-                field("Document No."; "Document No.")
+                field("Document No."; Rec."Document No.")
                 {
                     ToolTip = 'Specifies the document number on the entry. The document is the voucher that the entry was based on, for example, a receipt.';
                     ApplicationArea = All;
                 }
-                field("External Document No."; "External Document No.")
+                field("External Document No."; Rec."External Document No.")
+                {
+                    ToolTip = 'Specifies the external document number.';
+                    ApplicationArea = All;
+                }
+                field("Source Type"; Rec."Source Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Source Type"; "Source Type")
+                field("Source No."; Rec."Source No.")
                 {
+                    ToolTip = 'Specifies the source number.';
                     ApplicationArea = All;
                 }
-                field("Source No."; "Source No.")
+                field(Decription; Rec.Decription)
                 {
+                    ToolTip = 'Specifies a description of the item.';
                     ApplicationArea = All;
                 }
-                field(Decription; Decription)
+                field("Sales Amount"; Rec."Amount")
                 {
+                    ToolTip = 'Specifies the number of vehicles purchased or sold.';
                     ApplicationArea = All;
                 }
-                field("Sales Amount"; "Amount")
+                field(Positive; Rec.Positive)
                 {
+                    ToolTip = 'Specifies the number of amount positive or negative.';
                     ApplicationArea = All;
                 }
-                field(Positive; Positive)
+                field("No. Series"; Rec."No. Series")
                 {
-                    ApplicationArea = All;
-                }
-                field("No. Series"; "No. Series")
-                {
+                    ToolTip = 'Specifies the Number Series.';
                     ApplicationArea = All;
                 }
 
-                field("Document Line No."; "Document Line No.")
+                field("Document Line No."; Rec."Document Line No.")
                 {
+                    ToolTip = 'Specifies the document line number.';
                     ApplicationArea = All;
                 }
-                field("Vehicle Description"; "Vehicle Description")
+                field("Vehicle Description"; Rec."Vehicle Description")
                 {
+                    ToolTip = 'Specifies the vehicle''s description';
                     ApplicationArea = All;
                 }
-                field("Entry No."; "Entry No.")
+                field("Entry No."; Rec."Entry No.")
                 {
-                    ApplicationArea = All;
                     ToolTip = 'Specifies the number of the entry, as assigned from the specified number series when the entry was created.';
+                    ApplicationArea = All;
                 }
             }
 
