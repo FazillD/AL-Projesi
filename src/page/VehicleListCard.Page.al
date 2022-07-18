@@ -31,7 +31,6 @@ page 50151 "Vehicle List Card"
                 field("Search Description"; Rec."Search Description")
                 {
                     ToolTip = 'Specifies the search decription.';
-
                     ApplicationArea = All;
                 }
                 field("Vehicle Group Code"; Rec."Vehicle Group Code")

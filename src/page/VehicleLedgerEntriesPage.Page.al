@@ -13,6 +13,7 @@ page 50155 "Vehicle Ledger Entries Page"
             {
                 field("Vehicle No"; Rec."Vehicle No")
                 {
+                    ToolTip = 'Specifies the vehicle no.';
                     ApplicationArea = All;
                 }
                 field("Posting Date"; Rec."Posting Date")
@@ -42,6 +43,7 @@ page 50155 "Vehicle Ledger Entries Page"
                 }
                 field("Source Type"; Rec."Source Type")
                 {
+                    ToolTip = 'Specifies the source type.';
                     ApplicationArea = All;
                 }
                 field("Source No."; Rec."Source No.")
