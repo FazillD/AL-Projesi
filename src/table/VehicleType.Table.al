@@ -1,18 +1,18 @@
-table 50152 "Arac Grupları"
+table 50152 "Vehicle Type"
 {
-    Description = 'Arac Gruplar1';
+    Description = 'Vehicle Type';
     DataClassification = CustomerContent;
     fields
     {
-        field(1; Kod; Text[10])
+        field(1; "Code"; Text[10])
         {
-            Description = 'Kod';
+            Caption = 'Code';
             DataClassification = ToBeClassified;
 
         }
-        field(2; Acıklama; Text[30])
+        field(2; Description; Text[30])
         {
-            Description = 'Acıklama';
+            Caption = 'Description';
             DataClassification = ToBeClassified;
 
         }
@@ -20,7 +20,7 @@ table 50152 "Arac Grupları"
 
     keys
     {
-        key(PK; Kod)
+        key(PK; "Code")
         {
             Clustered = true;
         }

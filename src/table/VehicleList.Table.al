@@ -4,104 +4,97 @@ table 50150 "Vehicle List"
     DrillDownPageId = "Vehicle List Card";
     Description = 'Vehicle List1';
     DataClassification = CustomerContent;
-
     fields
     {
-        field(1; No; Text[20])
+        field(1; "No."; Text[20])
         {
-            Description = 'No';
+            Caption = 'No';
             DataClassification = CustomerContent;
 
         }
-        field(2; Acıklama; Text[20])
+        field(2; Description; Text[20])
         {
-            Description = 'Acıklama';
-            DataClassification = CustomerContent;
-
-
-        }
-        field(3; Acıklama2; Text[20])
-        {
-            Description = 'Acıklama';
+            Caption = 'Description';
             DataClassification = CustomerContent;
 
 
         }
-        field(4; AramaAcıklama; Text[20])
+        field(3; Description2; Text[20])
         {
-            Description = 'AramaAcıklama';
+            Caption = 'Description2';
+            DataClassification = CustomerContent;
+
+
+        }
+        field(4; "Search Description"; Text[20])
+        {
+            Caption = 'Search Description';
             DataClassification = CustomerContent;
 
         }
-        field(5; AracGrupKodu; Text[10])
+        field(5; "Vehicle Group Code"; Text[10])
         {
-            TableRelation = "Arac Grupları";
+            TableRelation = "Vehicle Type";
             DataClassification = CustomerContent;
 
         }
-        field(6; Stok; Decimal)
+        field(6; Inventory; Decimal)
         {
             FieldClass = FlowField;
-            CalcFormula = SUM("Arac Deftere Girisleri".Miktar
-            WHERE("AracNo" = FIELD("No")));
+            CalcFormula = SUM("Vehicle Ledger Entries"."Amount"
+            WHERE("Vehicle No" = FIELD("No.")));
             Editable = false;
-            Description = 'Stok';
-            //DataClassification = CustomerContent;
-
+            Description = 'Stock';
         }
-        field(7; NetDegisim; Decimal)
+        field(7; "Net Change"; Decimal)
         {
             FieldClass = FlowField;
             Editable = false;
-            Description = 'NetDegisim';
-            CalcFormula = sum("Arac Deftere Girisleri".Miktar
-            where(AracNo = field(No),
-            "Deftere Nakil Tarihi" = filter(< '14/7/2022')));
-            //DataClassification = CustomerContent;
-
+            Caption = 'Net Change';
+            CalcFormula = sum("Vehicle Ledger Entries"."Amount"
+            where("Vehicle No" = field("No."),
+            "Posting Date" = field("Date Filter")));
         }
-        field(8; PurchaseAmount; Decimal)
+        field(8; "Purchase Amount"; Decimal)
         {
 
             FieldClass = FlowField;
             Editable = false;
-            Description = 'Purchase Amount';
-            CalcFormula = sum("Arac Deftere Girisleri".Miktar
-            where(AracNo = field(No),
-            "Giris Turu" = const(Buying)));
-            //DataClassification = CustomerContent;
-
+            Caption = 'Purchase Amount';
+            CalcFormula = sum("Vehicle Ledger Entries"."Amount"
+            where("Vehicle No" = field("No."),
+            "Entry Type" = const(Purchase)));
+        }
+        field(9; "Date Filter"; Date)
+        {
+            FieldClass = FlowFilter;
+        }
+        field(10; Image; Media)
+        {
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(PK; No)
+        key(PK; "No.")
         {
             Clustered = true;
         }
-        key(key1; AracGrupKodu)
-        { }
     }
-
-    var
-        myInt: Integer;
-
+    fieldgroups
+    {
+        fieldgroup(Brick; "No.", Description, Image) { }
+        fieldgroup(DropDown; "No.", Description, Inventory) { }
+    }
     trigger OnInsert()
     begin
 
     end;
 
     trigger OnModify()
-    var
-        amount: Record "Arac Deftere Girisleri";
-        purchase: Integer;
     begin
-        if amount.Miktar > 0 then begin
-            Message('hi there');
-            purchase := PurchaseAmount + amount.Miktar
-        end;
-        PurchaseAmount := purchase;
+
     end;
 
     trigger OnDelete()
@@ -113,7 +106,4 @@ table 50150 "Vehicle List"
     begin
 
     end;
-
-    var
-
 }
