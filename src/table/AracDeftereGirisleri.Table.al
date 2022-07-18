@@ -11,6 +11,10 @@ table 50155 "Arac Deftere Girisleri"
             Description = 'AracNo';
             TableRelation = "Vehicle List";
             DataClassification = ToBeClassified;
+            /*trigger OnValidate()
+            begin
+                "Giris No." := "Giris No." + 1;
+            end;*/
 
         }
         field(2; "Deftere Nakil Tarihi"; Date)
